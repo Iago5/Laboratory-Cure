@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class VidaVirus : MonoBehaviour
+{
+    // Start is called before the first frame update
+
+    [SerializeField] int vida;
+    [SerializeField] int maximoVida;
+
+    private void Start()
+    {
+        vida = maximoVida;
+    }
+
+    public void TomarDano(int dano)
+    {
+        vida -= dano;
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+}
